@@ -1,0 +1,10 @@
+[
+{"first_name":"John", 
+ "last_name":"Smith",
+ "doc_num":12345,
+ "has_loans":"yes"},
+{"first_name":"Mary",
+ "last_name":"Jane",
+  "doc_num":23456,
+  "has_loans":"no"}
+]

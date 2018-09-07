@@ -1,0 +1,34 @@
+{
+ "description":"Test Pipeline",
+ "nodes":
+ [{
+   "node-id":1,
+   "type":"Rules",
+   "file":"pipeline.py",
+   "class":"BlacklistRules"
+ },
+ {
+   "node-id":2,
+   "type":"Decision",
+   "file":"pipeline.py",
+   "class":"BlacklistReject"
+ },
+ {
+   "node-id":3,
+   "type":"Model",
+   "file":"pipeline.py",
+   "class":"ScoringModel"
+ },
+ {
+   "node-id":4,
+   "type":"Decision",
+   "file":"pipeline.py",
+   "class":"ModelDecision"
+ }],
+ "transitions":
+ [ {"from":1, "to":2, "condition":"False"},
+   {"from":1, "to":3, "condition":"True"},
+   {"from":3, "to":4} ]
+}
+
+
