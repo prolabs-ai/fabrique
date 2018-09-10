@@ -30,6 +30,6 @@ class Model():
 
 class FeatureExtractor():
 
-  def get_features(self,data):
+  def get_result(self,data):
     raise Exception("This method needs to be defined in a subclass")
 

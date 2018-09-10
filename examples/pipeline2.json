@@ -2,34 +2,38 @@
  "description":"Test Pipeline",
  "nodes":
  [
+ { "id":"0",
+   "type":"SchemaValidator",
+   "schema":"data_schema.json"
+ },
  {
-   "id":1,
+   "id":"1",
    "type":"Rules",
    "file":"pipeline.py",
    "class":"BlacklistRules"
  },
  {
-   "id":2,
+   "id":"2",
    "type":"Decision",
    "file":"pipeline.py",
    "class":"BlacklistReject"
  },
  {
-   "id":3,
+   "id":"3",
    "type":"Model",
    "file":"pipeline.py",
    "class":"ScoringModel"
  },
  {
-   "id":4,
+   "id":"4",
    "type":"Decision",
    "file":"pipeline.py",
    "class":"ModelDecision"
  }],
  "transitions":
- [ {"from":1, "to":2, "condition":"False"},
-   {"from":1, "to":3, "condition":"True"},
-   {"from":3, "to":4} ]
+ [ {"from":"0", "to":"1"},
+   {"from":"1", "to":"2", "condition":"False"},
+   {"from":"1", "to":"3", "condition":"True"},
+   {"from":"3", "to":"4"} ]
 }
-
 

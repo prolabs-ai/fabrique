@@ -1,0 +1,12 @@
+{"id":"data_schema",
+ "data":
+ {
+   "properties":
+   {
+      "first_name":"string",
+      "last_name":"string",
+      "doc_num":"integer",
+      "has_loans":"string"
+   }
+  }
+}
