@@ -8,6 +8,7 @@ import traceback
 
 from fabrique.engines import Rules, Model,Decision,FeatureExtractor
 from fabrique.validators import SchemaValidator
+from fabrique.pipeline import validate_pipeline
 
 # Python pipeline executor
 class Executor():
@@ -19,6 +20,7 @@ class Executor():
   def execute(self,pipeline_spec_file,data_file):
     data = json.load(data_file)
     pipeline = json.load(pipeline_spec_file)
+    validate_pipeline(pipeline)
     
     nodes = { x["id"]:x for x in pipeline["nodes"] }
 
