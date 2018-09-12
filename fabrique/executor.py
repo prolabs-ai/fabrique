@@ -55,7 +55,7 @@ class Executor():
 
         except Exception as e:
           msg = traceback.format_exc()
-          return {"error": msg}
+          yield {"error": msg}
 
         next_node_id = None
         for t in [p for p in pipeline["transitions"] if p["from"]==curr_node_id]:
